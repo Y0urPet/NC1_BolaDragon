@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		2B0043EB2BDA3A1300E70390 /* NC1_BolaDragonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0043EA2BDA3A1300E70390 /* NC1_BolaDragonApp.swift */; };
 		2B0043ED2BDA3A1300E70390 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0043EC2BDA3A1300E70390 /* ContentView.swift */; };
-		2B0043EF2BDA3A1300E70390 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0043EE2BDA3A1300E70390 /* Item.swift */; };
 		2B0043F12BDA3A1400E70390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B0043F02BDA3A1400E70390 /* Assets.xcassets */; };
 		2B0043F42BDA3A1400E70390 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B0043F32BDA3A1400E70390 /* Preview Assets.xcassets */; };
 		2B0043FE2BDA3A1400E70390 /* NC1_BolaDragonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0043FD2BDA3A1400E70390 /* NC1_BolaDragonTests.swift */; };
 		2B0044082BDA3A1400E70390 /* NC1_BolaDragonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0044072BDA3A1400E70390 /* NC1_BolaDragonUITests.swift */; };
 		2B00440A2BDA3A1400E70390 /* NC1_BolaDragonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0044092BDA3A1400E70390 /* NC1_BolaDragonUITestsLaunchTests.swift */; };
+		2B0044172BDA3D1B00E70390 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0044162BDA3D1B00E70390 /* MainMenu.swift */; };
+		2B0044192BDA3D9500E70390 /* CubeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0044182BDA3D9500E70390 /* CubeBackground.swift */; };
+		2B00441C2BDA519100E70390 /* DragonBallOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B00441B2BDA519100E70390 /* DragonBallOne.swift */; };
+		2B00441E2BDA51F600E70390 /* DragonBallTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B00441D2BDA51F600E70390 /* DragonBallTwo.swift */; };
+		2B0044202BDA62D100E70390 /* DragonBallTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B00441F2BDA62D100E70390 /* DragonBallTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,6 @@
 		2B0043E72BDA3A1300E70390 /* NC1_BolaDragon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NC1_BolaDragon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B0043EA2BDA3A1300E70390 /* NC1_BolaDragonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NC1_BolaDragonApp.swift; sourceTree = "<group>"; };
 		2B0043EC2BDA3A1300E70390 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2B0043EE2BDA3A1300E70390 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		2B0043F02BDA3A1400E70390 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B0043F32BDA3A1400E70390 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2B0043F92BDA3A1400E70390 /* NC1_BolaDragonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NC1_BolaDragonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +49,11 @@
 		2B0044032BDA3A1400E70390 /* NC1_BolaDragonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NC1_BolaDragonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B0044072BDA3A1400E70390 /* NC1_BolaDragonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NC1_BolaDragonUITests.swift; sourceTree = "<group>"; };
 		2B0044092BDA3A1400E70390 /* NC1_BolaDragonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NC1_BolaDragonUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2B0044162BDA3D1B00E70390 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		2B0044182BDA3D9500E70390 /* CubeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeBackground.swift; sourceTree = "<group>"; };
+		2B00441B2BDA519100E70390 /* DragonBallOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallOne.swift; sourceTree = "<group>"; };
+		2B00441D2BDA51F600E70390 /* DragonBallTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallTwo.swift; sourceTree = "<group>"; };
+		2B00441F2BDA62D100E70390 /* DragonBallTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +106,9 @@
 			children = (
 				2B0043EA2BDA3A1300E70390 /* NC1_BolaDragonApp.swift */,
 				2B0043EC2BDA3A1300E70390 /* ContentView.swift */,
-				2B0043EE2BDA3A1300E70390 /* Item.swift */,
+				2B0044162BDA3D1B00E70390 /* MainMenu.swift */,
+				2B0044182BDA3D9500E70390 /* CubeBackground.swift */,
+				2B00441A2BDA514F00E70390 /* Component */,
 				2B0043F02BDA3A1400E70390 /* Assets.xcassets */,
 				2B0043F22BDA3A1400E70390 /* Preview Content */,
 			);
@@ -128,6 +138,16 @@
 				2B0044092BDA3A1400E70390 /* NC1_BolaDragonUITestsLaunchTests.swift */,
 			);
 			path = NC1_BolaDragonUITests;
+			sourceTree = "<group>";
+		};
+		2B00441A2BDA514F00E70390 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				2B00441B2BDA519100E70390 /* DragonBallOne.swift */,
+				2B00441F2BDA62D100E70390 /* DragonBallTitle.swift */,
+				2B00441D2BDA51F600E70390 /* DragonBallTwo.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +281,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B0043ED2BDA3A1300E70390 /* ContentView.swift in Sources */,
-				2B0043EF2BDA3A1300E70390 /* Item.swift in Sources */,
+				2B00441C2BDA519100E70390 /* DragonBallOne.swift in Sources */,
+				2B0044172BDA3D1B00E70390 /* MainMenu.swift in Sources */,
+				2B0044192BDA3D9500E70390 /* CubeBackground.swift in Sources */,
+				2B00441E2BDA51F600E70390 /* DragonBallTwo.swift in Sources */,
 				2B0043EB2BDA3A1300E70390 /* NC1_BolaDragonApp.swift in Sources */,
+				2B0044202BDA62D100E70390 /* DragonBallTitle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
