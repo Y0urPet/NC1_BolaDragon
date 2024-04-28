@@ -17,6 +17,7 @@ struct MainMenu: View {
                 DragonBallTitle()
                 HStack(spacing: 16) {
                     Button {
+                        let playNavigation = NavigationLink(destination: AR())
                         
                     } label: {
                         Image(systemName: "play.fill")

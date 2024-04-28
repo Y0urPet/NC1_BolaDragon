@@ -51,7 +51,7 @@ struct ARViewContainer: UIViewRepresentable {
         let treasureModel3 = try! Entity.load(named: "Iniapa")
         
         // Scale the treasure models
-        let scale: Float = 0.01
+        let scale: Float = 0.001
         treasureModel1.scale = SIMD3<Float>(repeating: scale)
         treasureModel2.scale = SIMD3<Float>(repeating: scale)
         treasureModel3.scale = SIMD3<Float>(repeating: scale)
@@ -59,9 +59,9 @@ struct ARViewContainer: UIViewRepresentable {
         // Position the treasures in the scene
         let anchor = AnchorEntity(plane: .horizontal)
         let treasurePositions: [SIMD3<Float>] = [
-            SIMD3<Float>(2, 1, 1),
-            SIMD3<Float>(1, 1, 2),
-            SIMD3<Float>(3, 2, 1)
+            SIMD3<Float>(1.3, 50.23, -382.25),
+            SIMD3<Float>(56.36, 1.26, -910.21),
+            SIMD3<Float>(4.39, 5, -612.59)
         ]
         
         for (index, position) in treasurePositions.enumerated() {
