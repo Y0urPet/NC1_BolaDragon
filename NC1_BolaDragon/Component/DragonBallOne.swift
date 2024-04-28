@@ -31,7 +31,7 @@ struct DragonBallOne: View {
                 }
             }
             .foregroundStyle(.second)
-            .frame(width: 175,height: 175)
+            .frame(width: 125,height: 125)
     }
 }
 

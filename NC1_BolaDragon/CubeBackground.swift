@@ -76,7 +76,7 @@ struct CubeBackground: View {
         }
         .keyframeAnimator(initialValue: AnimationProperties(), repeating: true) { content, value in
             content
-                .offset(y: value.yTranslation)
+                .offset(x:value.yTranslation,y: value.yTranslation)
                 
         } keyframes: { _ in
             KeyframeTrack(\.yTranslation) {
@@ -91,7 +91,6 @@ struct CubeBackground: View {
 
 struct AnimationProperties {
     var yTranslation = 0.0
-    var verticalStretch = 1.0
 }
 
 #Preview {

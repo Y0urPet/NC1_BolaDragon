@@ -10,7 +10,7 @@ import SwiftUI
 struct MainMenu: View {
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
+            Color.forestGreen.ignoresSafeArea()
             CubeBackground()
             Color.black.opacity(0.7).ignoresSafeArea()
             VStack(spacing: 50) {
