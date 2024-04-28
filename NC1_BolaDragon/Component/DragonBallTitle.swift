@@ -14,7 +14,7 @@ struct DragonBallTitle: View {
     var body: some View {
         
         ZStack {
-            Image("titleBall")
+            Image("BolaDragonIcon")
                 .resizable()
                 .frame(width: 200,height: 200)
                 .scaleEffect(hexScaling)
