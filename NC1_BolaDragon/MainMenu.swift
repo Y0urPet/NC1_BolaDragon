@@ -19,7 +19,7 @@ struct MainMenu: View {
                 VStack(spacing: 50) {
                     DragonBallTitle()
                     HStack(spacing: 16) {
-                        NavigationLink(destination: ARViewContainer()) {
+                        NavigationLink(destination: ARViewContainer().edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/).navigationBarTitle("", displayMode: .inline).navigationBarBackButtonHidden()) {
                             Image(systemName: "play.fill")
                                 .resizable()
                                 .foregroundColor(.prime)

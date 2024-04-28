@@ -10,10 +10,11 @@ import RealityKit
 
 struct AR: View {
     var body: some View {
-        ARViewContainer().edgesIgnoringSafeArea(.all)
+        
+        
+        ARViewContainer().edgesIgnoringSafeArea(.all).navigationBarTitle("", displayMode: .inline)
     }
 }
-
 class Coordinator: NSObject {
     weak var view: ARView?
     var treasuresFound: Int = 0
