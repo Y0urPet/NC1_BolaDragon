@@ -9,7 +9,6 @@ import SwiftUI
 
 struct DragonBallTitle: View {
     @State var hexScaling: CGFloat = 1
-    @State var hexDegree: Double = 0
     
     var body: some View {
         
