@@ -42,7 +42,7 @@ struct MainMenu: View {
                 VStack(spacing: 50) {
                     DragonBallTitle().animation(.none)
                     HStack(spacing: 16) {
-                        NavigationLink(destination: ARViewContainer().edgesIgnoringSafeArea(.all).navigationBarTitle("", displayMode: .inline).navigationBarBackButtonHidden()) {
+                        NavigationLink(destination: AR(treasureCounter: TreasureCounter()).edgesIgnoringSafeArea(.all).navigationBarTitle("", displayMode: .inline).navigationBarBackButtonHidden()) {
                             Image(systemName: "play.fill")
                                 .resizable()
                                 .foregroundColor(.prime)

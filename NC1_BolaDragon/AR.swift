@@ -9,16 +9,24 @@ import SwiftUI
 import RealityKit
 
 struct AR: View {
+    let treasureCounter: TreasureCounter
     var body: some View {
+        ZStack {
+            ARViewContainer().ignoresSafeArea().overlay {
+                if treasureCounter.isWin {
+                    AnimationDragon()
+                }
+//                AnimationDragon()
+            }
+        }
         
-        
-        ARViewContainer().edgesIgnoringSafeArea(.all).navigationBarTitle("", displayMode: .inline)
     }
 }
 
 class TreasureCounter: ObservableObject {
     @Published var treasuresFound: Int = 0
     let totalTreasures: Int = 3
+    @Published var isWin: Bool = false
 }
     
 
@@ -40,7 +48,16 @@ class Coordinator: NSObject {
             treasureCounter.treasuresFound += 1
 
             // Display the count on the screen
-//            print("Treasures Found: \(treasuresFound)")
+            
+            if treasureCounter.treasuresFound == 7 {
+                print("You Win!")
+                treasureCounter.isWin = true
+                if treasureCounter.isWin {
+                    print("You have win!")
+                }
+            } else {
+                print("Treasures Found: \(treasureCounter.treasuresFound)")
+            }
         }
     }
 }
@@ -82,24 +99,24 @@ struct ARViewContainer: UIViewRepresentable {
         treasureModel3.scale = SIMD3<Float>(repeating: scale)
         
         // Position the treasures in the scene
-//        let anchor = AnchorEntity(plane: .horizontal)
-//        let treasurePositions: [SIMD3<Float>] = [
-//            SIMD3<Float>(1, 1, 1),
-//            SIMD3<Float>(2, 2, 2),
-//            SIMD3<Float>(1, 2, 1)
-//        ]
-//        
-//                
-//        for (index, position) in treasurePositions.enumerated() {
-//            let treasure = index == 0 ? treasureModel1 : (index == 1 ? treasureModel2 : treasureModel3)
-//            treasure.name = "Treasure"
-//            treasure.transform.translation = position
-//            anchor.addChild(treasure)
-//        }
-//        
-//        
-//        
-//        arView.scene.addAnchor(anchor)
+        let anchor = AnchorEntity(plane: .horizontal)
+        let treasurePositions: [SIMD3<Float>] = [
+            SIMD3<Float>(1, 1, 1),
+            SIMD3<Float>(2, 2, 2),
+            SIMD3<Float>(1, 2, 1)
+        ]
+        
+                
+        for (index, position) in treasurePositions.enumerated() {
+            let treasure = index == 0 ? treasureModel1 : (index == 1 ? treasureModel2 : treasureModel3)
+            treasure.name = "Treasure"
+            treasure.transform.translation = position
+            anchor.addChild(treasure)
+        }
+        
+        
+        
+        arView.scene.addAnchor(anchor)
         
         return arView
     }
