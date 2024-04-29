@@ -52,9 +52,9 @@ struct MainMenu: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 10.0))
                         }.animation(.none)
                         
-                        Button(action: {
-                            // Add action for the second button here
-                        }) {
+
+                        NavigationLink(
+                            destination: Achievement()){
                             Image("achievement")
                                 .resizable()
                                 .frame(width: 40, height: 40)
