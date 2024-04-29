@@ -9,26 +9,34 @@ import SwiftUI
 import RealityKit
 
 struct AR: View {
-    let treasureCounter: TreasureCounter
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var treasureCounter: TreasureCounter
+    
     var body: some View {
         ZStack {
-            ARViewContainer().ignoresSafeArea().overlay {
+            ARViewContainer(treasureCounter: treasureCounter).ignoresSafeArea().overlay {
                 if treasureCounter.isWin {
                     AnimationDragon()
+                        .onAppear {
+                            // Dismiss the AR view when the treasure hunt is completed
+                            print("AnimationDragon appeared. Dismissing AR view.")
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
+                                self.presentationMode.wrappedValue.dismiss()
+                            }
+                        }
                 }
-//                AnimationDragon()
             }
         }
-        
     }
 }
+
 
 class TreasureCounter: ObservableObject {
     @Published var treasuresFound: Int = 0
     let totalTreasures: Int = 3
     @Published var isWin: Bool = false
 }
-    
+ 
 
 class Coordinator: NSObject {
     weak var view: ARView?
@@ -49,7 +57,7 @@ class Coordinator: NSObject {
 
             // Display the count on the screen
             
-            if treasureCounter.treasuresFound == 7 {
+            if treasureCounter.treasuresFound == 3 {
                 print("You Win!")
                 treasureCounter.isWin = true
                 if treasureCounter.isWin {

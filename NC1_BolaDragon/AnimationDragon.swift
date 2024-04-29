@@ -11,9 +11,9 @@ struct AnimationDragon: View {
     @State var scalingCheck:CGFloat = 20
     var body: some View {
         ZStack {
-            Color.black.opacity(0.5).ignoresSafeArea()
+            Color.black.opacity(0.5).ignoresSafeArea().blur(radius: 20)
             PathAnimationExample()
-            NavigationLink(destination: MainMenu().edgesIgnoringSafeArea(.all).navigationBarTitle("", displayMode: .inline).navigationBarBackButtonHidden()) {
+            NavigationLink(destination: MainMenu()) {
                 Image(systemName: "checkmark.circle.fill")
                     .resizable()
                     .foregroundColor(.prime)
