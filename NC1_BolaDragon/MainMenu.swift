@@ -53,15 +53,15 @@ struct MainMenu: View {
                         }.animation(.none)
                         
 
-                        NavigationLink(
-                            destination: Achievement()){
-                            Image("achievement")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .padding(20)
-                                .background(.second)
-                                .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                        }.animation(.none)
+//                        NavigationLink(
+//                            destination: Achievement()){
+//                            Image("achievement")
+//                                .resizable()
+//                                .frame(width: 40, height: 40)
+//                                .padding(20)
+//                                .background(.second)
+//                                .clipShape(RoundedRectangle(cornerRadius: 10.0))
+//                        }.animation(.none)
                     }
                 }
             }.onAppear{
