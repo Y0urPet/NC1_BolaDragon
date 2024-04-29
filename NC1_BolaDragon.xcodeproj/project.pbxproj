@@ -19,6 +19,7 @@
 		2B00441C2BDA519100E70390 /* DragonBallOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B00441B2BDA519100E70390 /* DragonBallOne.swift */; };
 		2B00441E2BDA51F600E70390 /* DragonBallTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B00441D2BDA51F600E70390 /* DragonBallTwo.swift */; };
 		2B0044202BDA62D100E70390 /* DragonBallTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B00441F2BDA62D100E70390 /* DragonBallTitle.swift */; };
+		2B0044262BDF401700E70390 /* DragonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0044252BDF401700E70390 /* DragonAnimation.swift */; };
 		F8FFDE2A2BDE2B590015859F /* Iniapa.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F8FFDE292BDE2B590015859F /* Iniapa.usdz */; };
 		F8FFDE2C2BDE2B610015859F /* AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FFDE2B2BDE2B610015859F /* AR.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		2B00441B2BDA519100E70390 /* DragonBallOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallOne.swift; sourceTree = "<group>"; };
 		2B00441D2BDA51F600E70390 /* DragonBallTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallTwo.swift; sourceTree = "<group>"; };
 		2B00441F2BDA62D100E70390 /* DragonBallTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallTitle.swift; sourceTree = "<group>"; };
+		2B0044252BDF401700E70390 /* DragonAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DragonAnimation.swift; path = ../../../LoopingAnimation/LoopingAnimation/DragonAnimation.swift; sourceTree = "<group>"; };
 		F8FFDE292BDE2B590015859F /* Iniapa.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Iniapa.usdz; sourceTree = "<group>"; };
 		F8FFDE2B2BDE2B610015859F /* AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +154,7 @@
 				2B00441B2BDA519100E70390 /* DragonBallOne.swift */,
 				2B00441F2BDA62D100E70390 /* DragonBallTitle.swift */,
 				2B00441D2BDA51F600E70390 /* DragonBallTwo.swift */,
+				2B0044252BDF401700E70390 /* DragonAnimation.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				2B00441C2BDA519100E70390 /* DragonBallOne.swift in Sources */,
 				2B0044172BDA3D1B00E70390 /* MainMenu.swift in Sources */,
 				2B0044192BDA3D9500E70390 /* CubeBackground.swift in Sources */,
+				2B0044262BDF401700E70390 /* DragonAnimation.swift in Sources */,
 				2B00441E2BDA51F600E70390 /* DragonBallTwo.swift in Sources */,
 				2B0043EB2BDA3A1300E70390 /* NC1_BolaDragonApp.swift in Sources */,
 				F8FFDE2C2BDE2B610015859F /* AR.swift in Sources */,
