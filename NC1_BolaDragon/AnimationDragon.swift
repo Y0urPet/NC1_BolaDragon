@@ -166,7 +166,7 @@ struct PathAnimationExample: View {
                 .opacity(showHead ? 1 : 0)
                 .offset(y:-240)
             
-//            SplashBall()
+            BallAnimation()
 //            Circle().frame(width: 130).offset(x:120,y:-180).foregroundStyle(.orange)
 //            Slider(value: $pathProgress, in: 0.0...1.0)
 //                .padding()

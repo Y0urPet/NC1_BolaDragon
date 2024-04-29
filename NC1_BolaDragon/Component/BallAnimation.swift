@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SplashBall: View {
+struct BallAnimation: View {
     @State var opacitis1 = 0.0
     @State var opacitis2 = 0.0
     @State var opacitis3 = 0.0
@@ -41,7 +41,7 @@ struct SplashBall: View {
         .onAppear{
 //            withAnimation(.easeOut(duration: 1).delay(2)) {
 //                scaleAmount = 0.5
-//                
+//
 //            }
 //            let baseAnimate = Animation.linear(duration: 0.6)
 //            let rep = baseAnimate.repeatForever(autoreverses: true)
@@ -304,3 +304,4 @@ struct BallSeventh: View {
 #Preview {
     BallOne()
 }
+

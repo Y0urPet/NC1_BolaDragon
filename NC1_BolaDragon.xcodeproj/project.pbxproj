@@ -20,7 +20,7 @@
 		2B00441E2BDA51F600E70390 /* DragonBallTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B00441D2BDA51F600E70390 /* DragonBallTwo.swift */; };
 		2B0044202BDA62D100E70390 /* DragonBallTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B00441F2BDA62D100E70390 /* DragonBallTitle.swift */; };
 		2B0044282BDF423600E70390 /* AnimationDragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0044272BDF423600E70390 /* AnimationDragon.swift */; };
-		B44C7FC32BDF486B00429D2D /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44C7FC22BDF486B00429D2D /* Achievement.swift */; };
+		2B0044322BDFB36D00E70390 /* BallAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0044312BDFB36D00E70390 /* BallAnimation.swift */; };
 		F8FFDE2A2BDE2B590015859F /* Iniapa.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F8FFDE292BDE2B590015859F /* Iniapa.usdz */; };
 		F8FFDE2C2BDE2B610015859F /* AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FFDE2B2BDE2B610015859F /* AR.swift */; };
 /* End PBXBuildFile section */
@@ -59,8 +59,8 @@
 		2B00441D2BDA51F600E70390 /* DragonBallTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallTwo.swift; sourceTree = "<group>"; };
 		2B00441F2BDA62D100E70390 /* DragonBallTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallTitle.swift; sourceTree = "<group>"; };
 		2B0044272BDF423600E70390 /* AnimationDragon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDragon.swift; sourceTree = "<group>"; };
-		2B0044292BDF495C00E70390 /* SplashBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashBall.swift; sourceTree = "<group>"; };
 		2B00442F2BDF892D00E70390 /* dragonTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dragonTheme.mp3; path = ../../../../Downloads/dragonTheme.mp3; sourceTree = "<group>"; };
+		2B0044312BDFB36D00E70390 /* BallAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallAnimation.swift; sourceTree = "<group>"; };
 		F8FFDE292BDE2B590015859F /* Iniapa.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Iniapa.usdz; sourceTree = "<group>"; };
 		F8FFDE2B2BDE2B610015859F /* AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,8 +158,8 @@
 				2B00441B2BDA519100E70390 /* DragonBallOne.swift */,
 				2B00441F2BDA62D100E70390 /* DragonBallTitle.swift */,
 				2B00441D2BDA51F600E70390 /* DragonBallTwo.swift */,
+				2B0044312BDFB36D00E70390 /* BallAnimation.swift */,
 				2B00442F2BDF892D00E70390 /* dragonTheme.mp3 */,
-				2B0044292BDF495C00E70390 /* SplashBall.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -271,7 +271,6 @@
 				2B0043F42BDA3A1400E70390 /* Preview Assets.xcassets in Resources */,
 				F8FFDE2A2BDE2B590015859F /* Iniapa.usdz in Resources */,
 				2B0043F12BDA3A1400E70390 /* Assets.xcassets in Resources */,
-				2B0044302BDF892D00E70390 /* dragonTheme.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +304,7 @@
 				F8FFDE2C2BDE2B610015859F /* AR.swift in Sources */,
 				2B0044282BDF423600E70390 /* AnimationDragon.swift in Sources */,
 				2B0044202BDA62D100E70390 /* DragonBallTitle.swift in Sources */,
-				2B00442A2BDF495C00E70390 /* SplashBall.swift in Sources */,
+				2B0044322BDFB36D00E70390 /* BallAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,7 +468,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NC1_BolaDragon/Preview Content\"";
-				DEVELOPMENT_TEAM = FSN9NYGU93;
+				DEVELOPMENT_TEAM = N2K3R4X37B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "\"We need access to your camera to enable augmented reality features.\"";
@@ -499,7 +498,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NC1_BolaDragon/Preview Content\"";
-				DEVELOPMENT_TEAM = FSN9NYGU93;
+				DEVELOPMENT_TEAM = N2K3R4X37B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "\"We need access to your camera to enable augmented reality features.\"";
