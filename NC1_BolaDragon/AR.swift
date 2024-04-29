@@ -15,41 +15,70 @@ struct AR: View {
         ARViewContainer().edgesIgnoringSafeArea(.all).navigationBarTitle("", displayMode: .inline)
     }
 }
+
+class TreasureCounter: ObservableObject {
+    @Published var treasuresFound: Int = 0
+    let totalTreasures: Int = 3
+}
+    
+
 class Coordinator: NSObject {
     weak var view: ARView?
-    var treasuresFound: Int = 0
-    var totalTreasures: Int = 3 // Adjust the total number of treasures
-    
+    let treasureCounter: TreasureCounter
+
+    init(treasureCounter: TreasureCounter) {
+        self.treasureCounter = treasureCounter
+    }
+
     @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
-        
         guard let view = self.view else { return }
-        
+
         let tapLocation = recognizer.location(in: view)
-        
+
         if let _ = view.entity(at: tapLocation) as? ModelEntity {
             // Update the count of treasures found
-            treasuresFound += 1
-            
+            treasureCounter.treasuresFound += 1
+
             // Display the count on the screen
-            print("Treasures Found: \(treasuresFound)")
+            print("Treasures Found: \(treasureCounter.treasuresFound)")
+
+            if treasureCounter.treasuresFound == treasureCounter.totalTreasures {
+                print("Congratulations! You found all treasures!")
+                // You can display a SwiftUI alert or perform any other action here
+            }
         }
     }
 }
 
+
 struct ARViewContainer: UIViewRepresentable {
+    @ObservedObject var treasureCounter = TreasureCounter()
     
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
         context.coordinator.view = arView
         
+
+        
         arView.environment.sceneUnderstanding.options.insert(.occlusion)
         arView.addGestureRecognizer(UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.handleTap)))
+        
+        
         
         // Load the treasure models
         let treasureModel1 = try! Entity.load(named: "Iniapa")
         let treasureModel2 = try! Entity.load(named: "Iniapa")
         let treasureModel3 = try! Entity.load(named: "Iniapa")
+        
+        treasureModel1.generateCollisionShapes(recursive: true)
+        
+        
+        treasureModel2.generateCollisionShapes(recursive: true)
+        
+        
+        treasureModel3.generateCollisionShapes(recursive: true)
+
         
         // Scale the treasure models
         let scale: Float = 0.001
@@ -60,11 +89,12 @@ struct ARViewContainer: UIViewRepresentable {
         // Position the treasures in the scene
         let anchor = AnchorEntity(plane: .horizontal)
         let treasurePositions: [SIMD3<Float>] = [
-            SIMD3<Float>(1.3, 50.23, -382.25),
-            SIMD3<Float>(56.36, 1.26, -910.21),
-            SIMD3<Float>(4.39, 5, -612.59)
+            SIMD3<Float>(1, 1, 1),
+            SIMD3<Float>(2, 2, 2),
+            SIMD3<Float>(1, 2, 1)
         ]
         
+                
         for (index, position) in treasurePositions.enumerated() {
             let treasure = index == 0 ? treasureModel1 : (index == 1 ? treasureModel2 : treasureModel3)
             treasure.name = "Treasure"
@@ -72,15 +102,20 @@ struct ARViewContainer: UIViewRepresentable {
             anchor.addChild(treasure)
         }
         
+        
+        
         arView.scene.addAnchor(anchor)
         
         return arView
     }
     
-    func updateUIView(_ uiView: ARView, context: Context) {}
+    func updateUIView(_ uiView: ARView, context: Context) {
+        
+        
+    }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator()
+        Coordinator(treasureCounter: treasureCounter)
     }
     
 }

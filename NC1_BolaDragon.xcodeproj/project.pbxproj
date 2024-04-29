@@ -466,7 +466,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NC1_BolaDragon/Preview Content\"";
-				DEVELOPMENT_TEAM = TL3VJLYVF8;
+				DEVELOPMENT_TEAM = FSN9NYGU93;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "\"We need access to your camera to enable augmented reality features.\"";
@@ -496,7 +496,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NC1_BolaDragon/Preview Content\"";
-				DEVELOPMENT_TEAM = TL3VJLYVF8;
+				DEVELOPMENT_TEAM = FSN9NYGU93;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "\"We need access to your camera to enable augmented reality features.\"";
