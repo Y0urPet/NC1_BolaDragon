@@ -30,29 +30,29 @@ struct AR: View {
                 VStack {
                     HStack{
                         if treasureCounter.treasuresFound >= 1 {
-                            BallOne().grayscale(0) // Ungrayscale BallOne
+                            BallOne().colorMultiply(.green) // Ungrayscale BallOne
                         }
                         
                         if treasureCounter.treasuresFound >= 2 {
-                            BallTwo().grayscale(0) // Ungrayscale BallOne
+                            BallTwo().colorMultiply(.green)  // Ungrayscale BallOne
                         }
                        
                         if treasureCounter.treasuresFound >= 3 {
-                            BallThree().grayscale(0) // Ungrayscale BallOne
+                            BallThree().colorMultiply(.green) // Ungrayscale BallOne
                         }
                         if treasureCounter.treasuresFound >= 4 {
-                            BallFourth().grayscale(0) // Ungrayscale BallOne
+                            BallFourth().colorMultiply(.green)  // Ungrayscale BallOne
                         }
                     }
                     HStack{
                         if treasureCounter.treasuresFound >= 5 {
-                            BallFifth().grayscale(0) // Ungrayscale BallOne
+                            BallFifth().colorMultiply(.green)  // Ungrayscale BallOne
                         }
                         if treasureCounter.treasuresFound >= 6 {
-                            BallSixth().grayscale(0) // Ungrayscale BallOne
+                            BallSixth().colorMultiply(.green)  // Ungrayscale BallOne
                         }
                         if treasureCounter.treasuresFound >= 7 {
-                            BallSeventh().grayscale(0) // Ungrayscale BallOne
+                            BallSeventh().colorMultiply(.green)  // Ungrayscale BallOne
                         }
                     }
                     
