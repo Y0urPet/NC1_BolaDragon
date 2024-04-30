@@ -15,40 +15,40 @@ struct DragonBallTitle: View {
         
         ZStack {
             Circle().frame(width: 200).foregroundStyle(.orange.gradient).saturation(6.0)
-            VStack(spacing:0) {
-                HStack(spacing:12) {
+            VStack(spacing:16) {
+                HStack(spacing:16) {
                     Image(systemName: "star.fill")
                         .resizable()
                         .foregroundStyle(.yellow)
-                        .frame(width: starSize,height: starSize)
+                        .frame(width: 30,height: 30)
                     Image(systemName: "star.fill")
                         .resizable()
                         .foregroundStyle(.yellow)
-                        .frame(width: starSize,height: starSize)
+                        .frame(width: 30,height: 30)
                 }
-                HStack(spacing:5) {
+                HStack(spacing:16) {
                     Image(systemName: "star.fill")
                         .resizable()
                         .foregroundStyle(.yellow)
-                        .frame(width: starSize,height: starSize)
+                        .frame(width: 30,height: 30)
                     Image(systemName: "star.fill")
                         .resizable()
                         .foregroundStyle(.yellow)
-                        .frame(width: starSize,height: starSize)
+                        .frame(width: 30,height: 30)
                     Image(systemName: "star.fill")
                         .resizable()
                         .foregroundStyle(.yellow)
-                        .frame(width: starSize,height: starSize)
+                        .frame(width: 30,height: 30)
                 }
-                HStack(spacing:12) {
+                HStack(spacing:16) {
                     Image(systemName: "star.fill")
                         .resizable()
                         .foregroundStyle(.yellow)
-                        .frame(width: starSize,height: starSize)
+                        .frame(width: 30,height: 30)
                     Image(systemName: "star.fill")
                         .resizable()
                         .foregroundStyle(.yellow)
-                        .frame(width: starSize,height: starSize)
+                        .frame(width: 30,height: 30)
                 }
             }
             .offset(y:2)

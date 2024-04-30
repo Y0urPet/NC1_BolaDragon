@@ -319,47 +319,48 @@ struct SevenAnimation: View {
     
     var body: some View {
         ZStack {
+            Rectangle().foregroundStyle(.dragonColorNeck.gradient).ignoresSafeArea()
             Circle().frame(width: 200).foregroundStyle(.orange.gradient).saturation(6.0).opacity(circleOpacity)
-            VStack(spacing:5) {
-                HStack(spacing:5) {
+            VStack(spacing:16) {
+                HStack(spacing:16) {
                     Image(systemName: "star.fill")
                         .resizable()
                         .foregroundStyle(.yellow)
                         .opacity(opacitis1)
-                        .frame(width: 45,height: 45)
+                        .frame(width: 30,height: 30)
                     Image(systemName: "star.fill")
                         .resizable()
                         .foregroundStyle(.yellow)
-                        .frame(width: 45,height: 45)
+                        .frame(width: 30,height: 30)
                         .opacity(opacitis2)
                 }
-                HStack(spacing:5) {
+                HStack(spacing:16) {
                     Image(systemName: "star.fill")
                         .resizable()
                         .foregroundStyle(.yellow)
-                        .frame(width: 45,height: 45)
+                        .frame(width: 30,height: 30)
                         .opacity(opacitis3)
                     Image(systemName: "star.fill")
                         .resizable()
                         .foregroundStyle(.yellow)
-                        .frame(width: 45,height: 45)
+                        .frame(width: 30,height: 30)
                         .opacity(opacitis4)
                     Image(systemName: "star.fill")
                         .resizable()
                         .foregroundStyle(.yellow)
-                        .frame(width: 45,height: 45)
+                        .frame(width: 30,height: 30)
                         .opacity(opacitis5)
                 }
-                HStack(spacing:5) {
+                HStack(spacing:16) {
                     Image(systemName: "star.fill")
                         .resizable()
                         .foregroundStyle(.yellow)
-                        .frame(width: 45,height: 45)
+                        .frame(width: 30,height: 30)
                         .opacity(opacitis6)
                     Image(systemName: "star.fill")
                         .resizable()
                         .foregroundStyle(.yellow)
-                        .frame(width: 45,height: 45)
+                        .frame(width: 30,height: 30)
                         .opacity(opacitis7)
                 }
             }

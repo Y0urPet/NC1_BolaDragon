@@ -44,7 +44,7 @@ struct MainMenu: View {
         NavigationView {
             if showHome {
                 ZStack {
-                    Color.forestGreen.ignoresSafeArea()
+                    Color.dragonColorNeck.ignoresSafeArea()
                     CubeBackground()
                     Color.black.opacity(0.7).ignoresSafeArea()
                     VStack(spacing: 50) {

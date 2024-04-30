@@ -167,6 +167,8 @@ struct PathAnimationExample: View {
                 .offset(y:-240)
             
             BallAnimation()
+            
+            
 //            Circle().frame(width: 130).offset(x:120,y:-180).foregroundStyle(.orange)
 //            Slider(value: $pathProgress, in: 0.0...1.0)
 //                .padding()
