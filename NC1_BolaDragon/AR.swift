@@ -13,7 +13,9 @@ struct AR: View {
     @ObservedObject var treasureCounter: TreasureCounter
     
     var body: some View {
+        
         ZStack {
+          
             ARViewContainer(treasureCounter: treasureCounter).ignoresSafeArea().overlay {
                 if treasureCounter.isWin {
                     AnimationDragon()
@@ -25,7 +27,24 @@ struct AR: View {
                             }
                         }
                 }
+                VStack {
+                    HStack{
+                        BallOne().grayscale(1)
+                        BallTwo().grayscale(1)
+                        BallThree().grayscale(1)
+                        BallFourth().grayscale(1)
+                    }
+                    HStack{
+                        BallFifth().grayscale(1)
+                        BallSixth().grayscale(1)
+                        BallSeventh().grayscale(1)
+                    }
+                    
+                }
+                .offset(y:-300)
             }
+            
+            
         }
     }
 }
