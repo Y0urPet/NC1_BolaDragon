@@ -12,25 +12,24 @@ class AudioPlayerViewModel: ObservableObject {
     var audioPlayer: AVAudioPlayer?
 
   init() {
-    if let sound = Bundle.main.path(forResource: "dragonTheme", ofType: "mp3") {
+      if let sound = Bundle.main.path(forResource: "dragon", ofType: "mp3") {
+        do {
+          self.audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound))
+        } catch {
+          print("AVAudioPlayer could not be instantiated.")
+        }
+      } else {
+        print("Audio file could not be found.")
+      }
+  }
+
+  func playOrPause() {
+    guard let player = audioPlayer else { return }
       do {
         try AVAudioSession.sharedInstance().setCategory(.playback)
       } catch let error {
         print(error.localizedDescription)
       }
-      do {
-        self.audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound))
-      } catch {
-        print("AVAudioPlayer could not be instantiated.")
-      }
-    } else {
-      print("Audio file could not be found.")
-    }
-  }
-
-  func playOrPause() {
-    guard let player = audioPlayer else { return }
-
       player.play()
   }
 }
@@ -74,7 +73,7 @@ struct MainMenu: View {
                     }
                     .onAppear{
                         audioPlayerViewModel.audioPlayer?.numberOfLoops = 5
-                        audioPlayerViewModel.audioPlayer?.play()
+                        audioPlayerViewModel.playOrPause()
                     }
                 }
             } else {

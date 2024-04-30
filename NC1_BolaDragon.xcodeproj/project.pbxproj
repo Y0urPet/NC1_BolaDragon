@@ -21,6 +21,7 @@
 		2B0044202BDA62D100E70390 /* DragonBallTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B00441F2BDA62D100E70390 /* DragonBallTitle.swift */; };
 		2B0044282BDF423600E70390 /* AnimationDragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0044272BDF423600E70390 /* AnimationDragon.swift */; };
 		2B0044322BDFB36D00E70390 /* BallAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0044312BDFB36D00E70390 /* BallAnimation.swift */; };
+		2B0044362BE0971600E70390 /* dragon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B0044352BE0971600E70390 /* dragon.mp3 */; };
 		F8FFDE2A2BDE2B590015859F /* Iniapa.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F8FFDE292BDE2B590015859F /* Iniapa.usdz */; };
 		F8FFDE2C2BDE2B610015859F /* AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FFDE2B2BDE2B610015859F /* AR.swift */; };
 /* End PBXBuildFile section */
@@ -59,8 +60,8 @@
 		2B00441D2BDA51F600E70390 /* DragonBallTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallTwo.swift; sourceTree = "<group>"; };
 		2B00441F2BDA62D100E70390 /* DragonBallTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBallTitle.swift; sourceTree = "<group>"; };
 		2B0044272BDF423600E70390 /* AnimationDragon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDragon.swift; sourceTree = "<group>"; };
-		2B00442F2BDF892D00E70390 /* dragonTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dragonTheme.mp3; path = ../../../../Downloads/dragonTheme.mp3; sourceTree = "<group>"; };
 		2B0044312BDFB36D00E70390 /* BallAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallAnimation.swift; sourceTree = "<group>"; };
+		2B0044352BE0971600E70390 /* dragon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dragon.mp3; path = ../../../Downloads/dragon.mp3; sourceTree = "<group>"; };
 		F8FFDE292BDE2B590015859F /* Iniapa.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Iniapa.usdz; sourceTree = "<group>"; };
 		F8FFDE2B2BDE2B610015859F /* AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +118,7 @@
 				2B0043EA2BDA3A1300E70390 /* NC1_BolaDragonApp.swift */,
 				2B0043EC2BDA3A1300E70390 /* ContentView.swift */,
 				2B0044162BDA3D1B00E70390 /* MainMenu.swift */,
+				2B0044352BE0971600E70390 /* dragon.mp3 */,
 				2B0044272BDF423600E70390 /* AnimationDragon.swift */,
 				2B00441A2BDA514F00E70390 /* Component */,
 				2B0043F02BDA3A1400E70390 /* Assets.xcassets */,
@@ -159,7 +161,6 @@
 				2B00441F2BDA62D100E70390 /* DragonBallTitle.swift */,
 				2B00441D2BDA51F600E70390 /* DragonBallTwo.swift */,
 				2B0044312BDFB36D00E70390 /* BallAnimation.swift */,
-				2B00442F2BDF892D00E70390 /* dragonTheme.mp3 */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -271,6 +272,7 @@
 				2B0043F42BDA3A1400E70390 /* Preview Assets.xcassets in Resources */,
 				F8FFDE2A2BDE2B590015859F /* Iniapa.usdz in Resources */,
 				2B0043F12BDA3A1400E70390 /* Assets.xcassets in Resources */,
+				2B0044362BE0971600E70390 /* dragon.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
