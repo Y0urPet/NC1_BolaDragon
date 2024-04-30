@@ -9,12 +9,19 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    @State var treasureCounter = TreasureCounter()
     
     var body: some View {
-        MainMenu()
-        
+        VStack {
+            if treasureCounter.isWin {
+                AnimationDragon()
+            } else {
+                MainMenu()
+            }
+        }
     }
 }
+
 
 #Preview {
     ContentView()
