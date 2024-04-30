@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AnimationDragon: View {
-    @State var scalingCheck:CGFloat = 20
+    @State var scalingCheck:CGFloat = 10
     var body: some View {
         ZStack {
             Color.black.opacity(0.5).ignoresSafeArea()
@@ -16,17 +16,17 @@ struct AnimationDragon: View {
             NavigationLink(destination: MainMenu().edgesIgnoringSafeArea(.all).navigationBarTitle("", displayMode: .inline).navigationBarBackButtonHidden()) {
                 Image(systemName: "checkmark.circle.fill")
                     .resizable()
-                    .foregroundColor(.prime)
-                    .frame(width: 50, height: 50)
+                    .foregroundColor(.yellow)
+                    .frame(width: 60, height: 60)
                     .padding(scalingCheck)
-                    .background(.second)
+                    .background(.orange.gradient).saturation(3.0)
                     .clipShape(Circle())
                     .offset(y:300)
                     .onAppear {
                         let baseAnimate = Animation.linear(duration: 0.6)
                         let rep = baseAnimate.repeatForever(autoreverses: true)
                         withAnimation(rep) {
-                            scalingCheck = 25
+                            scalingCheck = 15
                         }
                     }
             }

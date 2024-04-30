@@ -117,7 +117,6 @@
 				2B0043EA2BDA3A1300E70390 /* NC1_BolaDragonApp.swift */,
 				2B0043EC2BDA3A1300E70390 /* ContentView.swift */,
 				2B0044162BDA3D1B00E70390 /* MainMenu.swift */,
-				2B0044182BDA3D9500E70390 /* CubeBackground.swift */,
 				2B0044272BDF423600E70390 /* AnimationDragon.swift */,
 				2B00441A2BDA514F00E70390 /* Component */,
 				2B0043F02BDA3A1400E70390 /* Assets.xcassets */,
@@ -155,6 +154,7 @@
 		2B00441A2BDA514F00E70390 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				2B0044182BDA3D9500E70390 /* CubeBackground.swift */,
 				2B00441B2BDA519100E70390 /* DragonBallOne.swift */,
 				2B00441F2BDA62D100E70390 /* DragonBallTitle.swift */,
 				2B00441D2BDA51F600E70390 /* DragonBallTwo.swift */,

@@ -32,7 +32,7 @@ struct DragonBallTwo: View {
                     hexScaling = 1.2
                 }
             }
-            .foregroundStyle(.prime)
+            .foregroundStyle(.orange)
             .frame(width: 125,height: 125)
     }
 }
