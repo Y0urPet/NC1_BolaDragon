@@ -29,15 +29,31 @@ struct AR: View {
                 }
                 VStack {
                     HStack{
-                        BallOne().grayscale(1)
-                        BallTwo().grayscale(1)
-                        BallThree().grayscale(1)
-                        BallFourth().grayscale(1)
+                        if treasureCounter.treasuresFound >= 1 {
+                            BallOne().grayscale(0) // Ungrayscale BallOne
+                        }
+                        
+                        if treasureCounter.treasuresFound >= 2 {
+                            BallTwo().grayscale(0) // Ungrayscale BallOne
+                        }
+                       
+                        if treasureCounter.treasuresFound >= 3 {
+                            BallThree().grayscale(0) // Ungrayscale BallOne
+                        }
+                        if treasureCounter.treasuresFound >= 4 {
+                            BallFourth().grayscale(0) // Ungrayscale BallOne
+                        }
                     }
                     HStack{
-                        BallFifth().grayscale(1)
-                        BallSixth().grayscale(1)
-                        BallSeventh().grayscale(1)
+                        if treasureCounter.treasuresFound >= 5 {
+                            BallFifth().grayscale(0) // Ungrayscale BallOne
+                        }
+                        if treasureCounter.treasuresFound >= 6 {
+                            BallSixth().grayscale(0) // Ungrayscale BallOne
+                        }
+                        if treasureCounter.treasuresFound >= 7 {
+                            BallSeventh().grayscale(0) // Ungrayscale BallOne
+                        }
                     }
                     
                 }
@@ -129,8 +145,8 @@ struct ARViewContainer: UIViewRepresentable {
         let anchor = AnchorEntity(plane: .horizontal)
         let treasurePositions: [SIMD3<Float>] = [
             SIMD3<Float>(1, 1, 1),
-            SIMD3<Float>(2, 2, 2),
-            SIMD3<Float>(1, 2, 1)
+            SIMD3<Float>(5, 0, 10),
+            SIMD3<Float>(3, 1.5, 6)
         ]
         
                 
