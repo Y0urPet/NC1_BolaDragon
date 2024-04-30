@@ -35,29 +35,8 @@ class AudioPlayerViewModel: ObservableObject {
   }
 }
 
-class AudioPlayerManager {
-    static let shared = AudioPlayerManager()
-    
-    var audioPlayer: AVAudioPlayer?
-    
-    func play(url: URL) {
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue) //<- No `let`
-            audioPlayer?.play()
-            print("sound is playing")
-        } catch let error {
-            print("Sound Play Error -> \(error)")
-        }
-    }
-}
-
 struct MainMenu: View {
     @StateObject var audioPlayerViewModel = AudioPlayerViewModel()
-    
-    let playerManager = AudioPlayerManager.shared //<-
-        
-//    @State var message: String = "Test Message2"
-//    @State var storedURL: URL?
     
     @State var showHome: Bool = false
     @State private var hexScaling = 1.0
@@ -91,38 +70,11 @@ struct MainMenu: View {
                                     .saturation(6.0)
                                     .clipShape(RoundedRectangle(cornerRadius: 10.0))
                             }.animation(.none)
-                            
-
-    //                        NavigationLink(
-    //                            destination: Achievement()){
-    //                            Image("achievement")
-    //                                .resizable()
-    //                                .frame(width: 40, height: 40)
-    //                                .padding(20)
-    //                                .background(.second)
-    //                                .clipShape(RoundedRectangle(cornerRadius: 10.0))
-    //                        }.animation(.none)
                         }
                     }
                     .onAppear{
                         audioPlayerViewModel.audioPlayer?.numberOfLoops = 5
                         audioPlayerViewModel.audioPlayer?.play()
-    //                    guard let path = Bundle.main.path(forResource: "selectSE", ofType: "mp3") else {
-    //                        print("Sound file not found")
-    //                        return
-    //                    }
-    //                    let url = URL(fileURLWithPath: path)
-    //                    do {
-    //                        let fileData = try Data(contentsOf: url)
-    //                        storedURL = saveDataFile(data: fileData, fileName: "test.mp3", folderName: "testFolder")
-    //                        
-    //                        print("File Writing on View -> Success \(storedURL?.absoluteString ?? "nil") ")
-    //                    } catch {
-    //                        print("Data.init(contentsOf:) failed: \(error)")
-    //                    }
-    //                    
-    //                    playerManager.play(url: storedURL!) //<-
-    //                    print("end of code")
                     }
                 }
             } else {

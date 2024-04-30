@@ -388,6 +388,8 @@ struct SevenAnimation: View {
                 }
                 withAnimation(.easeOut(duration: 0.5).delay(7)) {
                     opacitis7 = 1.0
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now()+8) {
                     showHome = true
                 }
             }
@@ -396,7 +398,7 @@ struct SevenAnimation: View {
 }
 
 
-#Preview {
-    BallOne()
-}
+//#Preview {
+//    SevenAnimation()
+//}
 

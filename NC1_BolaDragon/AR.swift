@@ -107,24 +107,24 @@ struct ARViewContainer: UIViewRepresentable {
         treasureModel3.scale = SIMD3<Float>(repeating: scale)
         
         // Position the treasures in the scene
-//        let anchor = AnchorEntity(plane: .horizontal)
-//        let treasurePositions: [SIMD3<Float>] = [
-//            SIMD3<Float>(1, 1, 1),
-//            SIMD3<Float>(2, 2, 2),
-//            SIMD3<Float>(1, 2, 1)
-//        ]
-//        
-//                
-//        for (index, position) in treasurePositions.enumerated() {
-//            let treasure = index == 0 ? treasureModel1 : (index == 1 ? treasureModel2 : treasureModel3)
-//            treasure.name = "Treasure"
-//            treasure.transform.translation = position
-//            anchor.addChild(treasure)
-//        }
-//        
-//        
-//        
-//        arView.scene.addAnchor(anchor)
+        let anchor = AnchorEntity(plane: .horizontal)
+        let treasurePositions: [SIMD3<Float>] = [
+            SIMD3<Float>(1, 1, 1),
+            SIMD3<Float>(2, 2, 2),
+            SIMD3<Float>(1, 2, 1)
+        ]
+        
+                
+        for (index, position) in treasurePositions.enumerated() {
+            let treasure = index == 0 ? treasureModel1 : (index == 1 ? treasureModel2 : treasureModel3)
+            treasure.name = "Treasure"
+            treasure.transform.translation = position
+            anchor.addChild(treasure)
+        }
+        
+        
+        
+        arView.scene.addAnchor(anchor)
         
         return arView
     }
