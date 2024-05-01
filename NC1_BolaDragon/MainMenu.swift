@@ -42,42 +42,38 @@ struct MainMenu: View {
     
     var body: some View {
         NavigationView {
-            if showHome {
-                ZStack {
-                    Color.dragonColorNeck.ignoresSafeArea()
-                    CubeBackground()
-                    Color.black.opacity(0.7).ignoresSafeArea()
-                    VStack(spacing: 50) {
-                        DragonBallTitle()
-                            .scaleEffect(hexScaling)
-                            .onAppear{
-                                // for scaling
-                                let baseAnimate1 = Animation.linear(duration: 1)
-                                let rep1 = baseAnimate1.repeatForever(autoreverses: true)
-                                withAnimation(rep1) {
-                                    hexScaling = 0.9
-                                }
+            ZStack {
+                Color.dragonColorNeck.ignoresSafeArea()
+                CubeBackground()
+                Color.black.opacity(0.7).ignoresSafeArea()
+                VStack(spacing: 50) {
+                    DragonBallTitle()
+                        .scaleEffect(hexScaling)
+                        .onAppear{
+                            // for scaling
+                            let baseAnimate1 = Animation.linear(duration: 1)
+                            let rep1 = baseAnimate1.repeatForever(autoreverses: true)
+                            withAnimation(rep1) {
+                                hexScaling = 0.9
                             }
-                        HStack(spacing: 16) {
-                            NavigationLink(destination: AR(treasureCounter: TreasureCounter()).edgesIgnoringSafeArea(.all).navigationBarTitle("", displayMode: .inline).navigationBarBackButtonHidden()) {
-                                Image(systemName: "play.fill")
-                                    .resizable()
-                                    .foregroundColor(.yellow)
-                                    .frame(width: 30, height: 30)
-                                    .padding(25)
-                                    .background(.orange.gradient)
-                                    .saturation(6.0)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                            }.animation(.none)
                         }
-                    }
-                    .onAppear{
-                        audioPlayerViewModel.audioPlayer?.numberOfLoops = 5
-                        audioPlayerViewModel.playOrPause()
+                    HStack(spacing: 16) {
+                        NavigationLink(destination: AR(treasureCounter: TreasureCounter()).edgesIgnoringSafeArea(.all).navigationBarTitle("", displayMode: .inline).navigationBarBackButtonHidden()) {
+                            Image(systemName: "play.fill")
+                                .resizable()
+                                .foregroundColor(.yellow)
+                                .frame(width: 30, height: 30)
+                                .padding(25)
+                                .background(.orange.gradient)
+                                .saturation(6.0)
+                                .clipShape(RoundedRectangle(cornerRadius: 10.0))
+                        }.animation(.none)
                     }
                 }
-            } else {
-                SevenAnimation(showHome: $showHome)
+                .onAppear{
+                    audioPlayerViewModel.audioPlayer?.numberOfLoops = 5
+                    audioPlayerViewModel.playOrPause()
+                }
             }
         }
     }
