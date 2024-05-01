@@ -8,9 +8,13 @@
 import SwiftUI
 import RealityKit
 
+
+
 struct AR: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var treasureCounter: TreasureCounter
+    @State private var floorScanned = false
+    
     
     var body: some View {
         
@@ -29,29 +33,29 @@ struct AR: View {
                 }
                 VStack {
                     HStack{
-                        if treasureCounter.treasuresFound >= 1 {
+                        if treasureCounter.treasuresFound >= 1*3 {
                             BallOne().colorMultiply(.green) // Ungrayscale BallOne
                         }
                         
-                        if treasureCounter.treasuresFound >= 2 {
+                        if treasureCounter.treasuresFound >= 2*3 {
                             BallTwo().colorMultiply(.green)  // Ungrayscale BallOne
                         }
                        
-                        if treasureCounter.treasuresFound >= 3 {
+                        if treasureCounter.treasuresFound >= 3*3 {
                             BallThree().colorMultiply(.green) // Ungrayscale BallOne
                         }
-                        if treasureCounter.treasuresFound >= 4 {
+                        if treasureCounter.treasuresFound >= 4*3 {
                             BallFourth().colorMultiply(.green)  // Ungrayscale BallOne
                         }
                     }
                     HStack{
-                        if treasureCounter.treasuresFound >= 5 {
+                        if treasureCounter.treasuresFound >= 5*3 {
                             BallFifth().colorMultiply(.green)  // Ungrayscale BallOne
                         }
-                        if treasureCounter.treasuresFound >= 6 {
+                        if treasureCounter.treasuresFound >= 6*3 {
                             BallSixth().colorMultiply(.green)  // Ungrayscale BallOne
                         }
-                        if treasureCounter.treasuresFound >= 7 {
+                        if treasureCounter.treasuresFound >= 7*3 {
                             BallSeventh().colorMultiply(.green)  // Ungrayscale BallOne
                         }
                     }
@@ -88,13 +92,13 @@ class Coordinator: NSObject {
 
         if let tappedEntity = view.entity(at: tapLocation) as? ModelEntity {
             
-            tappedEntity.isEnabled = false
+           tappedEntity.isEnabled = false
             // Update the count of treasures found
             treasureCounter.treasuresFound += 1
 
             // Display the count on the screen
             
-            if treasureCounter.treasuresFound == 3 {
+            if treasureCounter.treasuresFound == 21 {
                 print("You Win!")
                 treasureCounter.isWin = true
                 if treasureCounter.isWin {
@@ -109,12 +113,15 @@ class Coordinator: NSObject {
 
 
 struct ARViewContainer: UIViewRepresentable {
+    
     @ObservedObject var treasureCounter = TreasureCounter()
+    @State private var floorScanned = false
     
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
         context.coordinator.view = arView
+        
         
 
         
@@ -127,14 +134,19 @@ struct ARViewContainer: UIViewRepresentable {
         let treasureModel1 = try! Entity.load(named: "Dragon_Ball")
         let treasureModel2 = try! Entity.load(named: "Dragon_Ball")
         let treasureModel3 = try! Entity.load(named: "Dragon_Ball")
+        let treasureModel4 = try! Entity.load(named: "Dragon_Ball")
+        let treasureModel5 = try! Entity.load(named: "Dragon_Ball")
+        let treasureModel6 = try! Entity.load(named: "Dragon_Ball")
+        let treasureModel7 = try! Entity.load(named: "Dragon_Ball")
+        
         
         treasureModel1.generateCollisionShapes(recursive: true)
-        
-        
         treasureModel2.generateCollisionShapes(recursive: true)
-        
-        
         treasureModel3.generateCollisionShapes(recursive: true)
+        treasureModel4.generateCollisionShapes(recursive: true)
+        treasureModel5.generateCollisionShapes(recursive: true)
+        treasureModel6.generateCollisionShapes(recursive: true)
+        treasureModel7.generateCollisionShapes(recursive: true)
 
         
         // Scale the treasure models
@@ -142,22 +154,31 @@ struct ARViewContainer: UIViewRepresentable {
         treasureModel1.scale = SIMD3<Float>(repeating: scale)
         treasureModel2.scale = SIMD3<Float>(repeating: scale)
         treasureModel3.scale = SIMD3<Float>(repeating: scale)
+        treasureModel4.scale = SIMD3<Float>(repeating: scale)
+        treasureModel5.scale = SIMD3<Float>(repeating: scale)
+        treasureModel6.scale = SIMD3<Float>(repeating: scale)
+        treasureModel7.scale = SIMD3<Float>(repeating: scale)
         
         // Position the treasures in the scene
         let anchor = AnchorEntity(plane: .horizontal)
         let treasurePositions: [SIMD3<Float>] = [
             SIMD3<Float>(1, 1, 1),
             SIMD3<Float>(5, 0, 10),
-            SIMD3<Float>(3, 1.5, 6)
+            SIMD3<Float>(3, 1.5, 6),
+            SIMD3<Float>(1, 2, 3),
+            SIMD3<Float>(3, 2, 10),
+            SIMD3<Float>(4, 1.2, 2),
+            SIMD3<Float>(10, 2, 2)
         ]
         
                 
         for (index, position) in treasurePositions.enumerated() {
-            let treasure = index == 0 ? treasureModel1 : (index == 1 ? treasureModel2 : treasureModel3)
-            treasure.name = "Treasure"
-            treasure.transform.translation = position
-            anchor.addChild(treasure)
+            let treasureModel = [treasureModel1, treasureModel2, treasureModel3, treasureModel4, treasureModel5, treasureModel6, treasureModel7][index]
+            treasureModel.name = "Treasure"
+            treasureModel.transform.translation = position
+            anchor.addChild(treasureModel)
         }
+
         
         
         
@@ -167,6 +188,9 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
+        
+        
+        
         
         
     }
