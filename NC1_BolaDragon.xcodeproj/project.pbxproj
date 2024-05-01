@@ -22,7 +22,8 @@
 		2B0044282BDF423600E70390 /* AnimationDragon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0044272BDF423600E70390 /* AnimationDragon.swift */; };
 		2B0044322BDFB36D00E70390 /* BallAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0044312BDFB36D00E70390 /* BallAnimation.swift */; };
 		2B0044362BE0971600E70390 /* dragon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B0044352BE0971600E70390 /* dragon.mp3 */; };
-		F8FFDE2A2BDE2B590015859F /* Iniapa.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F8FFDE292BDE2B590015859F /* Iniapa.usdz */; };
+		F84702402BE2097700D98095 /* Dragon_Ball.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F847023F2BE2097700D98095 /* Dragon_Ball.usdz */; };
+		F84702422BE20B9200D98095 /* Woiah.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F84702412BE20B9200D98095 /* Woiah.usdz */; };
 		F8FFDE2C2BDE2B610015859F /* AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FFDE2B2BDE2B610015859F /* AR.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,7 +63,8 @@
 		2B0044272BDF423600E70390 /* AnimationDragon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDragon.swift; sourceTree = "<group>"; };
 		2B0044312BDFB36D00E70390 /* BallAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallAnimation.swift; sourceTree = "<group>"; };
 		2B0044352BE0971600E70390 /* dragon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dragon.mp3; path = ../../../Downloads/dragon.mp3; sourceTree = "<group>"; };
-		F8FFDE292BDE2B590015859F /* Iniapa.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Iniapa.usdz; sourceTree = "<group>"; };
+		F847023F2BE2097700D98095 /* Dragon_Ball.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Dragon_Ball.usdz; sourceTree = "<group>"; };
+		F84702412BE20B9200D98095 /* Woiah.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = Woiah.usdz; sourceTree = "<group>"; };
 		F8FFDE2B2BDE2B610015859F /* AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,7 +124,8 @@
 				2B0044272BDF423600E70390 /* AnimationDragon.swift */,
 				2B00441A2BDA514F00E70390 /* Component */,
 				2B0043F02BDA3A1400E70390 /* Assets.xcassets */,
-				F8FFDE292BDE2B590015859F /* Iniapa.usdz */,
+				F84702412BE20B9200D98095 /* Woiah.usdz */,
+				F847023F2BE2097700D98095 /* Dragon_Ball.usdz */,
 				2B0043F22BDA3A1400E70390 /* Preview Content */,
 			);
 			path = NC1_BolaDragon;
@@ -270,9 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B0043F42BDA3A1400E70390 /* Preview Assets.xcassets in Resources */,
-				F8FFDE2A2BDE2B590015859F /* Iniapa.usdz in Resources */,
 				2B0043F12BDA3A1400E70390 /* Assets.xcassets in Resources */,
 				2B0044362BE0971600E70390 /* dragon.mp3 in Resources */,
+				F84702422BE20B9200D98095 /* Woiah.usdz in Resources */,
+				F84702402BE2097700D98095 /* Dragon_Ball.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

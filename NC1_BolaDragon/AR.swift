@@ -86,7 +86,9 @@ class Coordinator: NSObject {
 
         let tapLocation = recognizer.location(in: view)
 
-        if let _ = view.entity(at: tapLocation) as? ModelEntity {
+        if let tappedEntity = view.entity(at: tapLocation) as? ModelEntity {
+            
+            tappedEntity.isEnabled = false
             // Update the count of treasures found
             treasureCounter.treasuresFound += 1
 
@@ -122,9 +124,9 @@ struct ARViewContainer: UIViewRepresentable {
         
         
         // Load the treasure models
-        let treasureModel1 = try! Entity.load(named: "Iniapa")
-        let treasureModel2 = try! Entity.load(named: "Iniapa")
-        let treasureModel3 = try! Entity.load(named: "Iniapa")
+        let treasureModel1 = try! Entity.load(named: "Dragon_Ball")
+        let treasureModel2 = try! Entity.load(named: "Dragon_Ball")
+        let treasureModel3 = try! Entity.load(named: "Dragon_Ball")
         
         treasureModel1.generateCollisionShapes(recursive: true)
         
@@ -136,7 +138,7 @@ struct ARViewContainer: UIViewRepresentable {
 
         
         // Scale the treasure models
-        let scale: Float = 0.001
+        let scale: Float = 0.01
         treasureModel1.scale = SIMD3<Float>(repeating: scale)
         treasureModel2.scale = SIMD3<Float>(repeating: scale)
         treasureModel3.scale = SIMD3<Float>(repeating: scale)
