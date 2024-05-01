@@ -13,23 +13,24 @@ struct AnimationDragon: View {
         ZStack {
             Color.black.opacity(0.5).ignoresSafeArea().blur(radius: 20)
             PathAnimationExample()
-            NavigationLink(destination: MainMenu()) {
-                Image(systemName: "checkmark.circle.fill")
-                    .resizable()
-                    .foregroundColor(.yellow)
-                    .frame(width: 60, height: 60)
-                    .padding(scalingCheck)
-                    .background(.orange.gradient).saturation(3.0)
-                    .clipShape(Circle())
-                    .offset(y:300)
-                    .onAppear {
-                        let baseAnimate = Animation.linear(duration: 0.6)
-                        let rep = baseAnimate.repeatForever(autoreverses: true)
-                        withAnimation(rep) {
-                            scalingCheck = 15
-                        }
-                    }
-            }
+//            NavigationLink(destination: MainMenu()) {
+//                Image(systemName: "checkmark.circle.fill")
+//                    .resizable()
+//                    .foregroundColor(.yellow)
+//                    .frame(width: 60, height: 60)
+//                    .padding(scalingCheck)
+//                    .background(.orange.gradient).saturation(3.0)
+//                    .clipShape(Circle())
+//                    .offset(y:300)
+//                    .onAppear {
+//                        let baseAnimate = Animation.linear(duration: 0.6)
+//                        let rep = baseAnimate.repeatForever(autoreverses: true)
+//                        withAnimation(rep) {
+//                            scalingCheck = 15
+//                        }
+//                    }
+//                
+//            }
         }
         
     }

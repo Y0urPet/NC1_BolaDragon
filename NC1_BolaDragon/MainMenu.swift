@@ -58,7 +58,7 @@ struct MainMenu: View {
                             }
                         }
                     HStack(spacing: 16) {
-                        NavigationLink(destination: AR(treasureCounter: TreasureCounter()).edgesIgnoringSafeArea(.all).navigationBarTitle("", displayMode: .inline).navigationBarBackButtonHidden()) {
+                        NavigationLink(destination: AR(treasureCounter: TreasureCounter(), isCoaching: IsChoachingHappen()).edgesIgnoringSafeArea(.all).navigationBarTitle("", displayMode: .inline).navigationBarBackButtonHidden()) {
                             Image(systemName: "play.fill")
                                 .resizable()
                                 .foregroundColor(.yellow)

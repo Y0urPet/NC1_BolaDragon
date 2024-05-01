@@ -7,64 +7,75 @@
 
 import SwiftUI
 import RealityKit
-
+import ARKit
 
 
 struct AR: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var treasureCounter: TreasureCounter
+    @ObservedObject var isCoaching: IsChoachingHappen
     @State private var floorScanned = false
-    
+//    @Binding var isCoaching: Bool
     
     var body: some View {
         
         ZStack {
           
             ARViewContainer(treasureCounter: treasureCounter).ignoresSafeArea().overlay {
+                
                 if treasureCounter.isWin {
                     AnimationDragon()
                         .onAppear {
                             // Dismiss the AR view when the treasure hunt is completed
                             print("AnimationDragon appeared. Dismissing AR view.")
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
                                 self.presentationMode.wrappedValue.dismiss()
                             }
                         }
                 }
-                VStack {
-                    HStack{
-                        if treasureCounter.treasuresFound >= 1*3 {
-                            BallOne().colorMultiply(.green) // Ungrayscale BallOne
+                ZStack {
+                    VStack {
+                        HStack{
+                            if treasureCounter.treasuresFound >= 1*3 {
+                                BallOne().colorMultiply(.green) // Ungrayscale BallOne
+                            }
+                            
+                            if treasureCounter.treasuresFound >= 2*3 {
+                                BallTwo().colorMultiply(.green)  // Ungrayscale BallOne
+                            }
+                           
+                            if treasureCounter.treasuresFound >= 3*3 {
+                                BallThree().colorMultiply(.green) // Ungrayscale BallOne
+                            }
+                            if treasureCounter.treasuresFound >= 4*3 {
+                                BallFourth().colorMultiply(.green)  // Ungrayscale BallOne
+                            }
+                        }
+                        HStack{
+                            if treasureCounter.treasuresFound >= 5*3 {
+                                BallFifth().colorMultiply(.green)  // Ungrayscale BallOne
+                            }
+                            if treasureCounter.treasuresFound >= 6*3 {
+                                BallSixth().colorMultiply(.green)  // Ungrayscale BallOne
+                            }
+                            if treasureCounter.treasuresFound >= 7*3 {
+                                BallSeventh().colorMultiply(.green)  // Ungrayscale BallOne
+                            }
                         }
                         
-                        if treasureCounter.treasuresFound >= 2*3 {
-                            BallTwo().colorMultiply(.green)  // Ungrayscale BallOne
-                        }
-                       
-                        if treasureCounter.treasuresFound >= 3*3 {
-                            BallThree().colorMultiply(.green) // Ungrayscale BallOne
-                        }
-                        if treasureCounter.treasuresFound >= 4*3 {
-                            BallFourth().colorMultiply(.green)  // Ungrayscale BallOne
-                        }
                     }
-                    HStack{
-                        if treasureCounter.treasuresFound >= 5*3 {
-                            BallFifth().colorMultiply(.green)  // Ungrayscale BallOne
-                        }
-                        if treasureCounter.treasuresFound >= 6*3 {
-                            BallSixth().colorMultiply(.green)  // Ungrayscale BallOne
-                        }
-                        if treasureCounter.treasuresFound >= 7*3 {
-                            BallSeventh().colorMultiply(.green)  // Ungrayscale BallOne
-                        }
+                    .offset(y:-300)
+                    if isCoaching.isCoaching {
+                        Rectangle()
+                            .frame(width: 230,height: 40)
+                            .offset(y:90)
+                            .foregroundStyle(.white)
+                        .blur(radius: 3.0)
+                    } else {
+                        EmptyView()
                     }
-                    
                 }
-                .offset(y:-300)
             }
-            
-            
         }
     }
 }
@@ -111,18 +122,52 @@ class Coordinator: NSObject {
     }
 }
 
+extension ARView: ARCoachingOverlayViewDelegate {
+    func addCoaching(coaching: ARCoachingOverlayView) {
+        // Make sure it rescales if the device orientation changes
+        coaching.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.addSubview(coaching)
+        // Set the Augmented Reality goal
+        coaching.goal = .horizontalPlane
+        // Set the ARSession
+        coaching.session = self.session
+        // Set the delegate for any callbacks
+        coaching.delegate = self
+    }
+    
+    // trigger when coaching happen
+    public func coachingOverlayViewWillActivate(_ coachingOverlayView: ARCoachingOverlayView) {
+//        isCoaching.isCoaching = true
+        print("Coaching Begin!!")
+    }
+    
+    // trigger when coaching ended
+    public func coachingOverlayViewDidDeactivate(_ coachingOverlayView: ARCoachingOverlayView) {
+//        isCoaching.isCoaching = false
+        print("Coaching Ended!!")
+    }
+}
+
+public class IsChoachingHappen: ObservableObject {
+    // ini tinggal diganti jadi untuk memunculkan sensor tulisan
+    @Published var isCoaching: Bool = true
+}
 
 struct ARViewContainer: UIViewRepresentable {
     
     @ObservedObject var treasureCounter = TreasureCounter()
     @State private var floorScanned = false
+    let coachingOverlay = ARCoachingOverlayView()
+//    @ObservedObject var isCoaching: IsChoachingHappen
     
     func makeUIView(context: Context) -> ARView {
         
         let arView = ARView(frame: .zero)
         context.coordinator.view = arView
         
-        
+        arView.addCoaching(coaching: coachingOverlay)
+        arView.coachingOverlayViewWillActivate(coachingOverlay)
+        arView.coachingOverlayViewDidDeactivate(coachingOverlay)
 
         
         arView.environment.sceneUnderstanding.options.insert(.occlusion)
