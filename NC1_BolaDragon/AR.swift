@@ -207,13 +207,13 @@ struct ARViewContainer: UIViewRepresentable {
         // Position the treasures in the scene
         let anchor = AnchorEntity(plane: .horizontal)
         let treasurePositions: [SIMD3<Float>] = [
-            SIMD3<Float>(1, 1, 1),
-            SIMD3<Float>(5, 0, 10),
-            SIMD3<Float>(3, 1.5, 6),
-            SIMD3<Float>(1, 2, 3),
-            SIMD3<Float>(3, 2, 10),
-            SIMD3<Float>(4, 1.2, 2),
-            SIMD3<Float>(10, 2, 2)
+            SIMD3<Float>(0, 0, 0),
+            SIMD3<Float>(-5, 0, 10),
+            SIMD3<Float>(-2, 1.5, -6),
+            SIMD3<Float>(1, 2, 7),
+            SIMD3<Float>(7, 2, -5),
+            SIMD3<Float>(-4, 1.2, -2),
+            SIMD3<Float>(-3, 2, 2)
         ]
         
                 
