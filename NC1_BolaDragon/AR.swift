@@ -65,15 +65,15 @@ struct AR: View {
                         
                     }
                     .offset(y:-300)
-                    if isCoaching.isCoaching {
-                        Rectangle()
-                            .frame(width: 230,height: 40)
-                            .offset(y:90)
-                            .foregroundStyle(.white)
-                        .blur(radius: 3.0)
-                    } else {
-                        EmptyView()
-                    }
+//                    if isCoaching.isCoaching {
+//                        Rectangle()
+//                            .frame(width: 230,height: 40)
+//                            .offset(y:90)
+//                            .foregroundStyle(.white)
+//                        .blur(radius: 3.0)
+//                    } else {
+//                        EmptyView()
+//                    }
                 }
             }
         }
