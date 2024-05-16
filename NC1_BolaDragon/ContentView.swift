@@ -6,18 +6,12 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @State var treasureCounter = TreasureCounter()
-    
+    @ObservedObject var treasureCounter: TreasureCounter = TreasureCounter()
     var body: some View {
         VStack {
-            if treasureCounter.isWin {
-                AnimationDragon()
-            } else {
-                MainMenu()
-            }
+            MainMenu(treasureCounter: treasureCounter)
         }
     }
 }

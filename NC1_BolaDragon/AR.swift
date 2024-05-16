@@ -34,37 +34,39 @@ struct AR: View {
                         }
                 }
                 ZStack {
-                    VStack {
-                        HStack{
-                            if treasureCounter.treasuresFound >= 1*3 {
-                                BallOne().colorMultiply(.green) // Ungrayscale BallOne
+                    if !treasureCounter.isWin {
+                        VStack {
+                            HStack{
+                                if treasureCounter.treasuresFound >= 1*3 {
+                                    BallOne().colorMultiply(.green) // Ungrayscale BallOne
+                                }
+                                
+                                if treasureCounter.treasuresFound >= 2*3 {
+                                    BallTwo().colorMultiply(.green)  // Ungrayscale BallOne
+                                }
+                               
+                                if treasureCounter.treasuresFound >= 3*3 {
+                                    BallThree().colorMultiply(.green) // Ungrayscale BallOne
+                                }
+                                if treasureCounter.treasuresFound >= 4*3 {
+                                    BallFourth().colorMultiply(.green)  // Ungrayscale BallOne
+                                }
+                            }
+                            HStack{
+                                if treasureCounter.treasuresFound >= 5*3 {
+                                    BallFifth().colorMultiply(.green)  // Ungrayscale BallOne
+                                }
+                                if treasureCounter.treasuresFound >= 6*3 {
+                                    BallSixth().colorMultiply(.green)  // Ungrayscale BallOne
+                                }
+                                if treasureCounter.treasuresFound >= 7*3 {
+                                    BallSeventh().colorMultiply(.green)  // Ungrayscale BallOne
+                                }
                             }
                             
-                            if treasureCounter.treasuresFound >= 2*3 {
-                                BallTwo().colorMultiply(.green)  // Ungrayscale BallOne
-                            }
-                           
-                            if treasureCounter.treasuresFound >= 3*3 {
-                                BallThree().colorMultiply(.green) // Ungrayscale BallOne
-                            }
-                            if treasureCounter.treasuresFound >= 4*3 {
-                                BallFourth().colorMultiply(.green)  // Ungrayscale BallOne
-                            }
                         }
-                        HStack{
-                            if treasureCounter.treasuresFound >= 5*3 {
-                                BallFifth().colorMultiply(.green)  // Ungrayscale BallOne
-                            }
-                            if treasureCounter.treasuresFound >= 6*3 {
-                                BallSixth().colorMultiply(.green)  // Ungrayscale BallOne
-                            }
-                            if treasureCounter.treasuresFound >= 7*3 {
-                                BallSeventh().colorMultiply(.green)  // Ungrayscale BallOne
-                            }
-                        }
-                        
+                        .offset(y:-300)
                     }
-                    .offset(y:-300)
 //                    if isCoaching.isCoaching {
 //                        Rectangle()
 //                            .frame(width: 230,height: 40)
@@ -83,7 +85,7 @@ struct AR: View {
 
 class TreasureCounter: ObservableObject {
     @Published var treasuresFound: Int = 0
-    let totalTreasures: Int = 3
+    @Published var totalTreasures: Int = 3
     @Published var isWin: Bool = false
 }
  
@@ -109,7 +111,7 @@ class Coordinator: NSObject {
 
             // Display the count on the screen
             
-            if treasureCounter.treasuresFound == 21 {
+            if treasureCounter.treasuresFound == 3 {
                 print("You Win!")
                 treasureCounter.isWin = true
                 if treasureCounter.isWin {

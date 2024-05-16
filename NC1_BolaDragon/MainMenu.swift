@@ -36,7 +36,7 @@ class AudioPlayerViewModel: ObservableObject {
 
 struct MainMenu: View {
     @StateObject var audioPlayerViewModel = AudioPlayerViewModel()
-    
+    @ObservedObject var treasureCounter: TreasureCounter
     @State var showHome: Bool = false
     @State private var hexScaling = 1.0
     
@@ -58,7 +58,7 @@ struct MainMenu: View {
                             }
                         }
                     HStack(spacing: 16) {
-                        NavigationLink(destination: AR(treasureCounter: TreasureCounter(), isCoaching: IsChoachingHappen()).edgesIgnoringSafeArea(.all).navigationBarTitle("", displayMode: .inline).navigationBarBackButtonHidden()) {
+                        NavigationLink(destination: AR(treasureCounter: treasureCounter, isCoaching: IsChoachingHappen()).edgesIgnoringSafeArea(.all).navigationBarTitle("", displayMode: .inline).navigationBarBackButtonHidden()) {
                             Image(systemName: "play.fill")
                                 .resizable()
                                 .foregroundColor(.yellow)
@@ -73,6 +73,8 @@ struct MainMenu: View {
                 .onAppear{
                     audioPlayerViewModel.audioPlayer?.numberOfLoops = 5
                     audioPlayerViewModel.playOrPause()
+                    treasureCounter.treasuresFound = 0
+                    treasureCounter.isWin = false
                 }
             }
         }
@@ -80,7 +82,7 @@ struct MainMenu: View {
 }
 
 #Preview {
-    MainMenu()
+    MainMenu(treasureCounter: TreasureCounter())
 }
 
 
